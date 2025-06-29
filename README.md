@@ -46,6 +46,34 @@ docker run -it --rm --name logecho -p 8080:8080 logecho
 
 ---
 
+## Como rodar no Kubernetes com Helm
+
+### Adicione o repositório 
+
+```bash
+helm repo add ojaoferreira https://ojaoferreira.github.io/helm-charts
+```
+
+### Instale a release no Cluster Kubernetes
+
+```bash
+helm install logecho ojaoferreira/logecho --create-namespace --namespace logecho
+```
+
+### Visualizando os logs gerados pela aplicação
+
+```bash
+kubectl logs deployment/logecho --namespace logecho --follow
+```
+
+### Port-forwarding com serviço
+
+```bash
+kubectl port-forward svc/logecho 8080 --namespace logecho
+```
+
+---
+
 ## 🔁 Log de vida
 
 A cada 15 segundos, a aplicação imprime:
