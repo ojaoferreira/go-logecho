@@ -1,0 +1,10 @@
+.dockerignore
+.git
+*.log
+bin/
+*.exe
+*.test
+*.out
+*.http
+README.md
+charts/

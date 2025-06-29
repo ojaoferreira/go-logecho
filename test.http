@@ -1,0 +1,7 @@
+### Create a new message
+POST http://localhost:8080/messages
+Content-Type: application/json
+
+{
+  "message": "test xpto"
+}
